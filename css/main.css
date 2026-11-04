@@ -53,6 +53,7 @@ table {
             MAIN STYLES
 ********************************* */
 
+
 html {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -76,4 +77,54 @@ h1{
 
     /* padding is the space inside the element, it pushes content away from the edge */
     padding: 10px;
+}
+
+/* *************************** 
+            Mobile Style    
+            ************************/
+
+    /* target the a tags only in the nav */
+    nav a{
+        /* make the block elements, so we can style them like buttons */
+        display: block;
+        background-color: cadetblue;
+        padding: 10px;
+        border-top: 2px solid cornflowerblue;
+        border-bottom: 2px solid cornflowerblue;
+        /* center the text */
+        text-align: center;
+        /* remove the underline */
+        text-decoration: none;
+    }
+
+    nav a:hover, nav a:active{
+            background-color: darkcyan;
+    }
+
+    /* ***********************
+            Media Queries
+    ************************* */
+
+@media screen and (min-width:640px){
+        /* any style inside this media query will only apply if the screen/browser is 640px or wider */
+
+    nav a{
+        float: left;
+        width: 25%;
+        /* box sizing can make the padding and border not count to ward the element"s size */
+        box-sizing: border-box;
+    }
+
+    /* make sure thhe content goes below the floated stuff */
+    main{
+        clear: both;
+    }
+}
+
+/* order matters - put your smallest media queries first */
+@media screen and (min-width:800px){
+    nav a{
+        background-color: rgb(141, 100, 179);
+    }
+    
 }
